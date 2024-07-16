@@ -1,2 +1,2 @@
-# popcorn-time
- movies database app
+# oasis-react-supabase
+ Hotel Oasis website
