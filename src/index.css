@@ -54,8 +54,18 @@ body {
   max-width: 42rem;
   background-color: var(--color-background-500);
   border-radius: 0.9rem;
-  overflow: hidden;
+  overflow-y: auto;
   position: relative;
+	-ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.box::-webkit-scrollbar {
+	display: none;
+}
+
+.box::-webkit-scrollbar-thumb {
+	display: none;
 }
 
 .loader {
@@ -325,8 +335,8 @@ body {
   aspect-ratio: 1;
   border-radius: 50%;
   border: none;
-  /* background-color: var(--color-text); */
-  background-color: #fff;
+  background-color: var(--color-text);
+  /* background-color: #fff; */
   color: var(--color-background-500);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
   font-family: sans-serif;
@@ -335,7 +345,7 @@ body {
   cursor: pointer;
   z-index: 999;
   display: flex;
-  align-items: center;
+  align-items: self-start;
   justify-content: center;
 }
 
