@@ -1,6 +1,6 @@
 import Logo from "../ui/Logo";
 
-const NavBar = ({children}) => {
+const NavBar = ({ children }) => {
 	return (
 		<nav className="nav-bar">
       <Logo />

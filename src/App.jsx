@@ -42,7 +42,7 @@ const App = () => {
     <>
       <NavBar>
         <Search query={query} setQuery={setQuery} />
-        <Counter movies={movies} />
+        <Counter movies={movies} error={error} />
       </NavBar>
 
       <Main>
