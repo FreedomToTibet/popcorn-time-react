@@ -35,7 +35,7 @@ const MovieDetails = ({ selectedId, onCloseMovie, onAddWatched, watched }) => {
     Genre: genre,
   } = movie;
 
-	const isTop = imdbRating > 8;
+	// const isTop = imdbRating > 8;
 
 	useKey("Escape", onCloseMovie);
 
@@ -91,7 +91,8 @@ const MovieDetails = ({ selectedId, onCloseMovie, onAddWatched, watched }) => {
           <button className="btn-back" onClick={onCloseMovie}>
             &larr;
           </button>
-          <img src={poster} alt={`Poster of ${movie} movie`} />
+          {/* <img src={poster} alt={`Poster of ${movie} movie`} /> */}
+          <img src={poster == "N/A" ? "./no-image-available.jpg" : poster} alt={`Poster of ${movie} movie`} />
           <div className="details-overview">
             <h2>{title}</h2>
             <p>{released} &bull; {runtime}</p>

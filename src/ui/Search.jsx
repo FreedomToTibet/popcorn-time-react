@@ -1,7 +1,7 @@
 import {useRef, useEffect} from 'react';
 import useKey from '../hooks/useKey';
 
-const Search = ({query, setQuery}) => {
+const Search = ({ query, setQuery }) => {
   const inputElement = useRef(null);
 
   useKey('Enter', function () {
@@ -11,13 +11,13 @@ const Search = ({query, setQuery}) => {
   });
 
   useEffect(() => {
-      setTimeout(() => {
-        inputElement.current?.focus();
-      }, 0);
-    }, [inputElement]);
+    setTimeout(() => {
+      inputElement.current?.focus();
+    }, 0);
+  }, [inputElement]);
 
   return (
-    <div style={{ position: 'relative' }}>
+    <div style={{position: 'relative'}}>
       <input
         className="search"
         type="text"
@@ -26,7 +26,7 @@ const Search = ({query, setQuery}) => {
         onChange={(e) => setQuery(e.target.value)}
         ref={inputElement}
       />
-			{query && (
+      {query && (
         <button
           className="clear-button"
           onClick={() => setQuery('')}
@@ -34,12 +34,12 @@ const Search = ({query, setQuery}) => {
             position: 'absolute',
             right: '10px',
             top: '50%',
-            transform: 'translateY(-50%)',
+            transform: 'translateY(-60%)',
             background: 'none',
             border: 'none',
             cursor: 'pointer',
-						color: 'white',
-						fontSize: '1.8rem',
+            color: 'white',
+            fontSize: '1.8rem',
           }}
         >
           &#x2715;

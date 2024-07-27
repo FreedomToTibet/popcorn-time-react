@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const KEY = "ed8c84e0";
 
@@ -6,6 +6,7 @@ export const useMovies = (query) => {
 	const [movies, setMovies] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState("");
+	const debounceTimeout = useRef(null);
 
 	useEffect(
     function () {
@@ -45,7 +46,15 @@ export const useMovies = (query) => {
         return;
       }
 
-      fetchMovies();
+      // fetchMovies();
+
+			if (debounceTimeout.current) {
+				clearTimeout(debounceTimeout.current);
+			}
+	
+			debounceTimeout.current = setTimeout(() => {
+				fetchMovies();
+			}, 500);
 
       return function () {
         controller.abort();
